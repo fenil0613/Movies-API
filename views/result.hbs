@@ -1,0 +1,29 @@
+<h1>
+    List of Movies sorted by Movie_ID
+</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Movie ID</th>
+            <th>Title</th>
+            <th>Genres</th>
+            <th>Full Plot</th>
+            <th>IMDB Rating</th>
+            <th>Casts</th>
+            <th>Directors</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <td>{{this._id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.genres}}</td>
+            <td>{{this.fullplot}}</td>
+            <td>{{this.imdb.rating}}</td>
+            <td>{{this.cast}}</td>
+            <td>{{this.directors}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

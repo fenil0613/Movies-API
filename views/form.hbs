@@ -1,0 +1,19 @@
+<h1>Form for Paginated Result</h1>
+<form method="get" action="/api/movies">
+    <table>
+        <tr>
+            <td><label for="page"> Page: </label></td>
+            <td><input type="text" name="page" placeholder="Page number"></td>
+        </tr>
+        <tr>
+            <td><label for="perPage"> perPage: </label></td>
+            <td><input type="text" name="perPage" placeholder="perPage results"></td>
+        </tr>
+        <tr>
+            <td><label for="title"> Movie Title: </label></td>
+            <td><input type="text" name="title" placeholder="Enter movie title"></td>
+        </tr>
+    </table>
+    <br>
+    <button type="submit"> Get Results </button>
+</form>
