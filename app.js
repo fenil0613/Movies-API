@@ -73,7 +73,7 @@ function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
 
-    if (token == null) return res.render('login', {data: null});
+    if (token == null) return res.sendStatus(401);
 
     jwt.verify(token, process.env.SECRET_TOKEN, (error, user) => {
         if (error) return res.sendStatus(403);
@@ -82,7 +82,7 @@ function authenticateToken(req, res, next) {
     })
 }
 
-app.get('/checking', [authenticateToken], (req, res) => {
+app.get('/checking', authenticateToken, (req, res) => {
     res.send(req.user);
 });
 
